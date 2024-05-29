@@ -1,0 +1,19 @@
+＃centOSの取得
+
+docker pull centos
+
+docker run -it --name my_centos_container centos /bin/bash
+
+docker exec -it my_centos_container /bin/bash
+
+docker ps -a
+
+docker stop my_centos_container
+
+docker rm my_centos_container
+
+docker images
+
+docker rmi centos
+
+
