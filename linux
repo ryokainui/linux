@@ -1,19 +1,69 @@
-＃centOSの取得
+1. Dockerイメージの取得
+sh
+コードをコピーする
+sudo docker pull ubuntu
+Docker HubからUbuntuのイメージをダウンロードします。
 
-docker pull centos
+2. コンテナの起動
+sh
+コードをコピーする
+sudo docker run -it ubuntu
+ダウンロードしたUbuntuイメージから新しいコンテナを起動し、対話型のターミナルに接続します。
 
-docker run -it --name my_centos_container centos /bin/bash
+3. コンテナの停止
+sh
+コードをコピーする
+sudo docker stop <container_id>
+特定のコンテナIDのコンテナを停止します。
 
-docker exec -it my_centos_container /bin/bash
+4. コンテナの削除
+sh
+コードをコピーする
+sudo docker rm <container_id>
+停止したコンテナを削除します。
 
-docker ps -a
+5. 実行中のコンテナのリストを表示
+sh
+コードをコピーする
+sudo docker ps
+実行中のコンテナのリストを表示します。
 
-docker stop my_centos_container
+6. すべてのコンテナのリストを表示
+sh
+コードをコピーする
+sudo docker ps -a
+停止中のコンテナも含めたすべてのコンテナのリストを表示します。
 
-docker rm my_centos_container
+7. Dockerイメージのリストを表示
+sh
+コードをコピーする
+sudo docker images
+ローカルに存在するDockerイメージのリストを表示します。
 
-docker images
+Docker Composeの利用
+Docker Composeは、複数のコンテナで構成されるアプリケーションを管理するためのツールです。以下に、簡単なDocker Composeの設定例を示します。
 
-docker rmi centos
+docker-compose.ymlファイルの作成:
 
+yaml
+コードをコピーする
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+Docker Composeでサービスを起動:
 
+sh
+コードをコピーする
+sudo docker-compose up
+Docker Composeでサービスを停止:
+
+sh
+コードをコピーする
+sudo docker-compose down
