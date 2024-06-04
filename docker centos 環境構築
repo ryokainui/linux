@@ -11,5 +11,4 @@ docker ps
 dcoker ps -a
 #コンテナの起動
 dcoker start mycentos
-docker exec -it mycentos /bin/bash
 docker ps
