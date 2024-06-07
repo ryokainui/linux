@@ -1,14 +1,3 @@
-docker pull centos:centos7
-docker images
-#コンテナの作成
-docker run -it -d --name mycentos centos:centos7
-docker ps
-docker exec -it mycentos /bin/bash
-cat /etc/os-release
-#コンテナの停止
-docker stop mycentos
-docker ps
-dcoker ps -a
-#コンテナの起動
-dcoker start mycentos
-docker ps
+docker run -d --privileged --name hoge centos /sbin/init
+docker exec -it hoge /bin/bash
+#systemctl使える
