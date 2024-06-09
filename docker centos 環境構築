@@ -1,4 +1,18 @@
+#開始
 docker run -d --privileged --name hoge centos /sbin/init
+
+#起動
+docker start hoge
 docker exec -it hoge /bin/bash
+
+#停止
+exit
+docker stop hoge
+
+#貼り付け
 sed -i -e 's/^mirrorlist/#mirrorlist/g' -e 's/^#baseurl=http:\/\/mirror/baseurl=http:\/\/vault/g' /etc/yum.repos.d/CentOS-*repo
+
+#参考
 https://tech-lab.sios.jp/archives/12903
+
+
