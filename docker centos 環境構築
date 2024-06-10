@@ -9,10 +9,22 @@ docker exec -it hoge /bin/bash
 exit
 docker stop hoge
 
-#貼り付け
+#貼り付け　　　yumを使えるようにします
 sed -i -e 's/^mirrorlist/#mirrorlist/g' -e 's/^#baseurl=http:\/\/mirror/baseurl=http:\/\/vault/g' /etc/yum.repos.d/CentOS-*repo
 
-#参考
-https://tech-lab.sios.jp/archives/12903
+#参考　unbound-keygen
+https://tech-lab.sios.jp/archives/1290systemctl status firewalld
+
+#firewalld設定
+yum -y install firewalld
+yum update firewalld
+systemctl status firewalld
+
+vi /etc/firewalld/firewalld.conf
+#これを
+FirewallBackend=nftables
+#変更
+FirewallBackend=iptables
+
 
 
