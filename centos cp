@@ -2,7 +2,7 @@ vi /etc/unbound/local.d/interface.conf
 interface: 192.168.1.10
 interface: 127.0.0.1
 vi /etc/unbound/local.d/client.conf
-access-cntrol: 192.168.1.0/24 allow
+access-control: 192.168.1.0/24 allow
 vi /etc/unbound/conf.d/stub.conf
 stub-zone:
     name: alpha.jp.
