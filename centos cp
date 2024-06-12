@@ -14,4 +14,3 @@ stub-zone:
     stub-addr: 192.168.1.102
     stub-prime: no
     stub-first: no
-
