@@ -9,13 +9,13 @@ docker exec -it hoge /bin/bash
 exit
 docker stop hoge
 
-#yum dnf設定
+#yum dnf
 sed -i -e 's/^mirrorlist/#mirrorlist/g' -e 's/^#baseurl=http:\/\/mirror/baseurl=http:\/\/vault/g' /etc/yum.repos.d/CentOS-*repo
 
-#Unbound設定
+#openssl
 dnf -y install openssl
 
-#firewalld設定
+#firewalld
 yum -y install firewalld
 yum update firewalld
 systemctl status firewalld
