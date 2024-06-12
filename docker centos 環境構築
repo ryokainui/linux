@@ -17,14 +17,12 @@ dnf -y install openssl
 
 #firewalld
 yum -y install firewalld
-yum update firewalld
 systemctl status firewalld
 
 vi /etc/firewalld/firewalld.conf
-#これを
 FirewallBackend=nftables
-#変更
-FirewallBackend=iptables
+FirewallBackend=iptables#変更
 
+systemctl restart firewalld
 
 
