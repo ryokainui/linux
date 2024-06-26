@@ -1,0 +1,14 @@
+#yum dnf
+sed -i -e 's/^mirrorlist/#mirrorlist/g' -e 's/^#baseurl=http:\/\/mirror/baseurl=http:\/\/vault/g' /etc/yum.repos.d/CentOS-*repo
+
+#openssl
+dnf -y install openssl
+
+#firewalld
+yum -y install firewalld
+
+vi /etc/firewalld/firewalld.conf
+FirewallBackend=nftables
+FirewallBackend=iptables#変更
+
+
